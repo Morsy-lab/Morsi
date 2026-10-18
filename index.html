@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173B57">
+    <title>Morsi | Comunicación accesible</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="contenedor">
+        <header>
+            <img
+                src="imagenes/Isotipo.jpeg"
+                alt="Logo de Morsi"
+                class="logo"
+            >
+            <h1>Morsi</h1>
+            <p>Tu voz a través del tacto</p>
+        </header>
+
+        <section class="panel" aria-labelledby="titulo">
+            <h2 id="titulo">Comunícate con código Morse</h2>
+            <p class="instruccion">
+                Pulsa brevemente para registrar un punto.
+                Mantén pulsado para registrar una raya.
+            </p>
+
+            <button
+                id="botonMorse"
+                class="boton-morse"
+                type="button"
+                aria-label="Entrada de código Morse. Pulsa brevemente para un punto o mantén pulsado para una raya."
+            >
+                <span aria-hidden="true">●</span>
+                <span>Registrar señal</span>
+            </button>
+
+            <p id="estado" role="status" aria-live="polite">
+                Listo para comenzar
+            </p>
+
+            <div class="seccion"></div>
+                <label for="secuencia">Secuencia de la letra actual</label>
+                <div id="secuencia" class="secuencia" aria-live="polite">
+                    Aún no hay señales
+                </div>
+            </div>
+
+            <div class="acciones">
+                <button id="terminarLetra" type="button">
+                    Terminar letra
+                </button>
+                <button id="espacio" type="button">
+                    Añadir espacio
+                </button>
+                <button id="borrarSenal" type="button">
+                    Borrar señal 
+                </button>
+            </div>
+
+            <div class="seccion">
+                <label for="mensaje">Mensaje traducido</label>
+                <textarea
+                    id="mensaje"
+                    rows="4"
+                    placeholder="Tu mensaje aparecerá aquí..."
+                    readonly
+                ></textarea>  
+            </div>
+
+            <div class="acciones">
+                <button id="copiar" type="button">Copiar mensaje</button>
+                <button id="escuchar" type="button">Escuchar mensaje</button>
+                <button id="borrarTodo" type="button">Borrar todo</button>
+            </div>
+
+            <p id="resultado" role="status" aria-live="polite"></p>
+         </section>
+
+          <footer>
+             <p>Morsi · Comunicación accesible y de bajo costo</p>
+          </footer>
+    </main>
+</body>
+</html>
